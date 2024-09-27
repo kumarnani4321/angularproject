@@ -1,0 +1,86 @@
+<div class="card">
+    <div class="card-header">
+      Quote
+    </div>
+    <div class="card-body">
+      <blockquote class="blockquote mb-0">
+        <p>ఆయన శక్తిమంతుడు, ఆయన మిమ్మును రక్షించును.</p>
+        <footer class="blockquote-footer" style="font-size: 30px;">జెఫన్యా 3:17</footer>
+      </blockquote>
+  
+      <!-- Button to trigger the login modal -->
+      <button type="button" class="btn btn-primary login-btn mt-3" data-bs-toggle="modal" data-bs-target="#loginModal">
+        <i class="fas fa-lock login-icon"></i> Login as Admin
+      </button>
+    </div>
+  </div>
+  
+  <!-- Admin Login Modal -->
+  <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="loginModalLabel">Admin Login</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form (ngSubmit)="login()">
+            <div class="mb-3">
+              <label for="username" class="form-label">Username</label>
+              <input type="text" class="form-control" id="username" [(ngModel)]="username" name="username" placeholder="Enter username" required>
+            </div>
+            <div class="mb-3">
+              <label for="password" class="form-label">Password</label>
+              <input type="password" class="form-control" id="password" [(ngModel)]="password" name="password" placeholder="Enter password" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Login</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Details Modal (Second Modal) -->
+  <div class="modal fade" id="detailsModal" tabindex="-1" aria-labelledby="detailsModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="detailsModalLabel">Enter Pastor Details</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form (ngSubmit)="submitDetails()">
+            <div class="mb-3">
+              <label for="youtubeUrl" class="form-label">YouTube URL</label>
+              <input type="text" class="form-control" id="youtubeUrl" [(ngModel)]="youtubeUrl" name="youtubeUrl" placeholder="Enter YouTube URL" required>
+            </div>
+            <div class="mb-3">
+              <label for="pastorName" class="form-label">Select Pastor</label>
+              <select class="form-select" id="pastorName" [(ngModel)]="pastorName" name="pastorName" required>
+                <option *ngFor="let pastor of pastors" [value]="pastor">{{ pastor }}</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="description" class="form-label">Description</label>
+              <textarea class="form-control" id="description" [(ngModel)]="description" name="description" rows="3" placeholder="Enter description"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Font Awesome and Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
+  
+  <!-- Custom CSS -->
+  <style>
+    .login-icon {
+      font-size: 1.2rem;
+      margin-right: 8px;
+      color: #a1720d;;
+    }
+  </style>
+  

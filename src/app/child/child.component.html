@@ -1,0 +1,32 @@
+<div class="card" *ngIf="userId === 'a'; else elseBlock">
+    <div class="card" style="max-width: 100%; margin: 0 auto;">
+      <img src="../../assets/images/TEMP1.jpeg" class="card-img-top" alt="Brother ChristhuDas">
+      <div class="card-body">
+        <h5 class="card-title">
+          <span class="color">Brother ChristhuDas</span>
+        </h5>
+        <div *ngFor="let entry of christudasEntries$ | async">
+          <h6 class="card-subtitle mb-2 text-muted">
+            <a [href]="entry.url" target="_blank">#{{ entry.description }}</a>
+          </h6>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <ng-template #elseBlock>
+    <div class="card" style="max-width: 100%; margin: 0 auto;">
+      <img src="../../assets/images/TEMP2.jpeg" class="card-img-top" alt="Brother Jashuva">
+      <div class="card-body">
+        <h5 class="card-title">
+          <span class="color">Brother Jashuva</span>
+        </h5>
+        <div *ngFor="let entry of jashuvaEntries$ | async">
+          <h6 class="card-subtitle mb-2 text-muted">
+            <a [href]="entry.url" target="_blank">#{{ entry.description }}</a>
+          </h6>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+  

@@ -1,0 +1,12 @@
+img{
+    border: 8px solid greenyellow;
+}
+.card-body
+{
+    border: 8px solid black;
+}
+.color
+{
+    color: blue;
+    border: 7px solid greenyellow;
+}
